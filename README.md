@@ -1,0 +1,2 @@
+# Ts_goofy
+gyakorlasok,
