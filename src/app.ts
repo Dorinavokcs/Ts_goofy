@@ -13,11 +13,11 @@ const setNumberList2 =(count:number, v:number, createNumber:(v:number)=>number):
     return Array.from({length: count},(item)=>createNumber(v));
 }
 
-const numbers = setNumberList(100,5,createNumber)
+const numbers = setNumberList(10,5,createNumber)
 console.log(numbers);
 
 type Stat = Record<number, number>;
-let statistic: Stat={};
+const statistic: Stat={};
 //statistic["1000"] = 59;
 for(let v of numbers){
    /*  if(v in statistic){
@@ -25,4 +25,8 @@ for(let v of numbers){
     }else{
         statistic[v]= 1
     } */
+   //nullish coalescing operátor
+   statistic[v] = (statistic[v] ?? 0)+1
 }
+
+console.log(statistic);
